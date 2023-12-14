@@ -45,6 +45,19 @@ define Device/glinet_gl-axt1800
 endef
 TARGET_DEVICES += glinet_gl-axt1800
 
+define Device/qihoo_v6
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := Qihoo
+	DEVICE_MODEL := v6
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@cp03-c1
+	DEVICE_DTS := ipq6018-qihoo-v6
+	SOC := ipq6018
+	DEVICE_PACKAGES := ipq-wifi-qihoo_v6 kmod-fs-ext4 mkf2fs f2fsck kmod-fs-f2fs
+endef
+TARGET_DEVICES += qihoo_v6
 
 define Device/jdc_ax1800-pro
 	$(call Device/FitImage)

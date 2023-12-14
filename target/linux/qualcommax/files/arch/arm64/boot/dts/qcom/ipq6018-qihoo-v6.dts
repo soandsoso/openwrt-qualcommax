@@ -1,0 +1,420 @@
+/*
+ * Copyright (c) 2019, The Linux Foundation. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ */
+
+/dts-v1/;
+
+
+#include "ipq6018.dtsi"
+#include "ipq6018-512m.dtsi"
+#include "ipq6018-ess.dtsi"
+#include "ipq6018-nss.dtsi"
+
+
+#include <dt-bindings/input/input.h>
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/leds/common.h>
+
+/ {
+	#address-cells = <0x2>;
+	#size-cells = <0x2>;
+    model = "Qihoo 360 V6";
+	compatible = "qihoo,v6", "qcom,ipq6018-cp03", "qcom,ipq6018";
+	interrupt-parent = <&intc>;
+	qcom,msm-id = <0x192 0x0>;
+
+	aliases {
+		led-boot = &led_red;
+		led-failsafe = &led_red;
+		led-running = &led_green;
+		led-upgrade = &led_green;
+		serial0 = &blsp1_uart3;
+
+        ethernet0 = &dp1;
+		ethernet1 = &dp2;
+		ethernet2 = &dp3;
+		ethernet3 = &dp4;
+	};
+
+    /delete-node/ rpm-glink;
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+        bootargs-append = " root=/dev/ubiblock0_1 swiotlb=1 coherent_pool=2M";
+	};
+
+
+    keys {
+        compatible = "gpio-keys";
+
+        wps {
+            label = "wps";
+			gpios = <&tlmm 19 GPIO_ACTIVE_LOW>;
+			linux,code = <KEY_WPS_BUTTON>;
+			linux,input-type = <0x01>;
+            debounce-interval = <0x3c>;
+        };
+
+        reset {
+            label = "reset";
+			gpios = <&tlmm 68 GPIO_ACTIVE_LOW>;
+			linux,code = <KEY_RESTART>;
+			linux,input-type = <0x01>;
+            debounce-interval = <0x3c>;
+        };
+    };
+    
+    leds {
+        compatible = "gpio-leds";
+		pinctrl-0 = <&leds_pins>;
+		pinctrl-names = "default";
+
+		led_red: status_red {
+			label = "v6:red:status";
+			gpio = <&tlmm 71 GPIO_ACTIVE_HIGH>;
+		};
+
+		led_orange: status_orange {
+			label = "v6:orange:status";
+			gpio = <&tlmm 72 GPIO_ACTIVE_HIGH>;
+		};
+
+		led_green: status_green {
+			label = "v6:green:status";
+			gpio = <&tlmm 73 GPIO_ACTIVE_HIGH>;
+		};
+    };
+};
+
+&tlmm {
+    compatible = "qcom,ipq6000-pinctrl";
+
+	uart_pins: uart_pins {
+		mux {
+			pins = "gpio44", "gpio45";
+			function = "blsp2_uart";
+			drive-strength = <0x08>;
+			bias-pull-down;
+		};
+	};
+
+	spi_1_pins: spi_1_pins {
+		mux {
+			pins = "gpio38", "gpio39", "gpio40", "gpio41";
+			function = "blsp0_spi";
+			drive-strength = <0x08>;
+			bias-pull-down;
+		};
+	};
+
+	// qpic_pins: qpic_pins {
+	// 	data_0 {
+	// 		pins = "gpio15";
+	// 		function = "qpic_pad0";
+	// 		drive-strength = <8>;
+	// 		bias-pull-down;
+	// 	};
+	// 	data_1 {
+	// 		pins = "gpio12";
+	// 		function = "qpic_pad1";
+	// 		drive-strength = <8>;
+	// 		bias-pull-down;
+	// 	};
+	// 	data_2 {
+	// 		pins = "gpio13";
+	// 		function = "qpic_pad2";
+	// 		drive-strength = <8>;
+	// 		bias-pull-down;
+	// 	};
+	// 	data_3 {
+	// 		pins = "gpio14";
+	// 		function = "qpic_pad3";
+	// 		drive-strength = <8>;
+	// 		bias-pull-down;
+	// 	};
+	// 	data_4 {
+	// 		pins = "gpio5";
+	// 		function = "qpic_pad4";
+	// 		drive-strength = <8>;
+	// 		bias-pull-down;
+	// 	};
+	// 	data_5 {
+	// 		pins = "gpio6";
+	// 		function = "qpic_pad5";
+	// 		drive-strength = <8>;
+	// 		bias-pull-down;
+	// 	};
+	// 	data_6 {
+	// 		pins = "gpio7";
+	// 		function = "qpic_pad6";
+	// 		drive-strength = <8>;
+	// 		bias-pull-down;
+	// 	};
+	// 	data_7 {
+	// 		pins = "gpio8";
+	// 		function = "qpic_pad7";
+	// 		drive-strength = <8>;
+	// 		bias-pull-down;
+	// 	};
+	// 	qpic_pad {
+	// 		pins = "gpio1", "gpio3", "gpio4",
+	// 		       "gpio10", "gpio11", "gpio17";
+	// 		function = "qpic_pad";
+	// 		drive-strength = <8>;
+	// 		bias-pull-down;
+	// 	};
+	// };
+
+	button_pins: button_pins {
+        wps_button {
+            pins = "gpio19";
+            function = "gpio";
+            drive-strength = <0x08>;
+            bias-pull-up;
+        };
+
+        reset_button {
+            pins = "gpio68";
+            function = "gpio";
+            drive-strength = <0x08>;
+            bias-pull-up;
+        };
+    };
+
+    mdio_pins: mdio_pinmux {
+		mux_0 {
+			pins = "gpio64";
+			function = "mdc";
+			drive-strength = <0x08>;
+			bias-pull-up;
+		};
+		mux_1 {
+			pins = "gpio65";
+			function = "mdio";
+			drive-strength = <0x08>;
+			bias-pull-up;
+		};
+		mux_2 {
+			pins = "gpio75";
+			function = "gpio";
+			bias-pull-up;
+		};
+	};
+
+	leds_pins: leds_pins {
+		red {
+			pins = "gpio71";
+			function = "gpio";
+			drive-strength = <0x08>;
+			bias-pull-down;
+		};
+
+		orange {
+			pins = "gpio72";
+			function = "gpio";
+			drive-strength = <0x08>;
+			bias-pull-down;
+		};
+
+		green {
+			pins = "gpio73";
+			function = "gpio";
+			drive-strength = <0x08>;
+			bias-pull-down;
+		};
+	};
+};
+
+
+&blsp1_uart3 {
+	pinctrl-0 = <&uart_pins>;
+	pinctrl-names = "default";
+	status = "okay";
+};
+
+&blsp1_spi1 {
+	pinctrl-0 = <&spi_1_pins>;
+	pinctrl-names = "default";
+	cs-select = <0>;
+	status = "okay";
+
+	m25p80@0 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		reg = <0>;
+		compatible = "n25q128a11";
+		linux,modalias = "m25p80", "n25q128a11";
+		spi-max-frequency = <50000000>;
+		use-default-sizes;
+	};
+};
+
+&prng {
+	status = "okay";
+};
+
+&cryptobam {
+	status = "okay";
+};
+
+&crypto {
+	status = "okay";
+};
+
+&qpic_bam {
+	status = "okay";
+};
+
+&qusb_phy_0 {
+	status = "okay";
+};
+
+&ssphy_0 {
+	status = "okay";
+};
+
+&usb2 {
+	status = "okay";
+};
+
+&usb3 {
+	status = "okay";
+};
+
+&edma {
+	status = "okay";
+};
+
+&mdio {
+	status = "okay";
+
+	pinctrl-0 = <&mdio_pins>;
+	pinctrl-names = "default";
+	// reset-gpios = <&tlmm 75 GPIO_ACTIVE_LOW>;
+	reset-gpios = <&tlmm 75 0 &tlmm 77 1>;
+
+    phy_0: ethernet-phy@0 {
+		compatible = "ethernet-phy-ieee802.3-c22";
+		reg = <0>;
+	};
+
+	phy_1: ethernet-phy@1 {
+		compatible = "ethernet-phy-ieee802.3-c22";
+		reg = <1>;
+	};
+
+	phy_2: ethernet-phy@2 {
+		compatible = "ethernet-phy-ieee802.3-c22";
+		reg = <2>;
+	};
+
+	phy_3: ethernet-phy@3 {
+		compatible = "ethernet-phy-ieee802.3-c22";
+		reg = <3>;
+	};
+};
+
+&switch {
+	status = "okay";
+
+	switch_cpu_bmp = <0x1>;  /* cpu port bitmap */
+	switch_lan_bmp = <0xe>; /* lan port bitmap */
+	switch_wan_bmp = <0x10>; /* wan port bitmap */
+	switch_inner_bmp = <0xc0>; /*inner port bitmap*/
+	switch_mac_mode = <0x0>; /* mac mode for uniphy instance0*/
+	switch_mac_mode1 = <0xff>; /* mac mode for uniphy instance1*/
+	switch_mac_mode2 = <0xff>; /* mac mode for uniphy instance2*/
+
+	qcom,port_phyinfo {
+        port@0 {
+			port_id = <1>;
+			phy_address = <0>;
+		};
+
+        port@1 {
+            port_id = <2>;
+            phy_address = <1>;
+        };
+
+        port@2 {
+            port_id = <3>;
+            phy_address = <2>;
+        };
+
+        port@3 {
+            port_id = <4>;
+            phy_address = <3>;
+        };
+	};
+};
+
+&qpic_bam {
+	status = "okay";
+};
+
+&qpic_nand {
+	status = "okay";
+
+	nand@0 {
+		reg = <0>;
+
+		nand-ecc-strength = <4>;
+		nand-ecc-step-size = <512>;
+		nand-bus-width = <0x08>;
+	};
+};
+
+&wifi {
+	status = "okay";
+	qcom,ath11k-calibration-variant = "Qihoo-V6";
+	qcom,ath11k-fw-memory-mode = <1>;
+};
+
+
+&dp1 {
+	phy-handle = <&phy_0>;
+	status = "okay";
+};
+
+&dp2 {
+	phy-handle = <&phy_1>;
+	status = "okay";
+};
+
+&dp3 {
+	phy-handle = <&phy_2>;
+	status = "okay";
+};
+
+&dp4 {
+	phy-handle = <&phy_3>;
+	status = "okay";
+};
+
+&CPU0 {
+	/delete-property/ cpu-supply;
+};
+
+&CPU1 {
+	/delete-property/ cpu-supply;
+};
+
+&CPU2 {
+	/delete-property/ cpu-supply;
+};
+
+&CPU3 {
+	/delete-property/ cpu-supply;
+};
