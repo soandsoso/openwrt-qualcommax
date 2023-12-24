@@ -86,15 +86,16 @@
 			gpio = <&tlmm 71 GPIO_ACTIVE_HIGH>;
 		};
 
-		led_orange: status_orange {
-			label = "v6:orange:status";
-			gpio = <&tlmm 72 GPIO_ACTIVE_HIGH>;
-		};
-
 		led_green: status_green {
 			label = "v6:green:status";
-			gpio = <&tlmm 73 GPIO_ACTIVE_HIGH>;
+			gpio = <&tlmm 72 GPIO_ACTIVE_HIGH>;
 		};
+		
+		led_orange: status_orange {
+			label = "v6:orange:status";
+			gpio = <&tlmm 70 GPIO_ACTIVE_HIGH>;
+		};
+
     };
 };
 
@@ -222,14 +223,14 @@
 		};
 
 		orange {
-			pins = "gpio72";
+			pins = "gpio70";
 			function = "gpio";
 			drive-strength = <0x08>;
 			bias-pull-down;
 		};
 
 		green {
-			pins = "gpio73";
+			pins = "gpio72";
 			function = "gpio";
 			drive-strength = <0x08>;
 			bias-pull-down;
