@@ -18,7 +18,9 @@ platform_do_upgrade() {
 	case "$(board_name)" in
 	cmiot,ax18|\
 	glinet,gl-axt1800|\
-	glinet,gl-ax1800)
+	glinet,gl-ax1800|\
+	redmi,ax5|\
+	xiaomi,ax1800)
 		nand_do_upgrade "$1"
 		;;
 	jdc,ax1800-pro)
