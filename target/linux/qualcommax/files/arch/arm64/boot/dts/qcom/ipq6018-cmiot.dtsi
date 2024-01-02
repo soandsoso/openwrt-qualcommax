@@ -16,10 +16,10 @@
 		serial0 = &blsp1_uart3;
 
 		/* Aliases as required by u-boot to patch MAC addresses */
-		ethernet0 = &dp1;
-		ethernet1 = &dp2;
-		ethernet2 = &dp3;
-		ethernet3 = &dp4;
+		ethernet0 = &dp5;
+		ethernet1 = &dp1;
+		ethernet2 = &dp2;
+		ethernet3 = &dp3;
 	};
 
     /delete-node/ rpm-glink;
@@ -87,22 +87,22 @@
 
 
 &dp1 {
-	phy-handle = <&phy_0>;
-	status = "okay";
-};
-
-&dp2 {
 	phy-handle = <&phy_1>;
 	status = "okay";
 };
 
-&dp3 {
+&dp2 {
 	phy-handle = <&phy_2>;
 	status = "okay";
 };
 
-&dp4 {
+&dp3 {
 	phy-handle = <&phy_3>;
+	status = "okay";
+};
+
+&dp5 {
+	phy-handle = <&phy_0>;
 	status = "okay";
 };
 
@@ -129,7 +129,7 @@
 	};
 
 	phy_3: ethernet-phy@3 {
-		reg = <3>;
+		reg = <2>;
 	};
 };
 
@@ -146,8 +146,8 @@
 			phy_address = <0x01>;
 		};
 		port@2 {
-			port_id = <0x04>;
-			phy_address = <0x03>;
+			port_id = <0x03>;
+			phy_address = <0x02>;
 		};
 		port@3 {
 			port_id = <0x05>;
