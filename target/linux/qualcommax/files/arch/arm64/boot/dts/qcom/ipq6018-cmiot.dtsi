@@ -136,9 +136,11 @@
 &switch {
 	status = "okay";
 
-	switch_mac_mode = <0x0>; /* mac mode for uniphy instance 0 */
-	switch_mac_mode1 = <0xff>; /* mac mode for uniphy instance 1 */
-	switch_mac_mode2 = <0xff>; /* mac mode for uniphy instance 2 */
+	switch_lan_bmp = <(ESS_PORT2 | ESS_PORT3 | ESS_PORT4)>; /* lan port bitmap */
+	switch_wan_bmp = <ESS_PORT1>; /* wan port bitmap */
+	switch_mac_mode = <MAC_MODE_DISABLED>; /* MAC mode for UNIPHY instance 0 */
+	switch_mac_mode1 = <MAC_MODE_DISABLED>; /* MAC mode for UNIPHY instance 1 */
+	switch_mac_mode2 = <MAC_MODE_DISABLED>; /* MAC mode for UNIPHY instance 2 */
 
 	qcom,port_phyinfo {
 		port@0 {
