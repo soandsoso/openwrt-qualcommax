@@ -11,8 +11,6 @@ Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
  arch/arm64/boot/dts/qcom/ipq6018.dtsi | 50 +++++++++++++++++++++++++++
  1 file changed, 50 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/qcom/ipq6018.dtsi b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-index 535cc07072dd..bf9381376dba 100644
 --- a/arch/arm64/boot/dts/qcom/ipq6018.dtsi
 +++ b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
 @@ -554,6 +554,26 @@
@@ -79,8 +77,3 @@ index 535cc07072dd..bf9381376dba 100644
  		};
  
  		blsp1_spi1: spi@78b5000 {
-compatible = "qcom,spi-qup-v2.2.1";
- 			#address-cells = <1>;
--- 
-2.25.1
-

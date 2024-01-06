@@ -55,7 +55,7 @@
  #endif
 --- a/include/linux/if_vlan.h
 +++ b/include/linux/if_vlan.h
-@@ -227,7 +227,28 @@ extern void vlan_vids_del_by_dev(struct
+@@ -235,7 +235,28 @@ extern void vlan_vids_del_by_dev(struct
  
  extern bool vlan_uses_dev(const struct net_device *dev);
  
@@ -86,7 +86,7 @@
  		     __be16 vlan_proto, u16 vlan_id)
 --- a/include/linux/netdevice.h
 +++ b/include/linux/netdevice.h
-@@ -2831,6 +2831,10 @@ enum netdev_cmd {
+@@ -2832,6 +2832,10 @@ enum netdev_cmd {
  	NETDEV_OFFLOAD_XSTATS_DISABLE,
  	NETDEV_OFFLOAD_XSTATS_REPORT_USED,
  	NETDEV_OFFLOAD_XSTATS_REPORT_DELTA,
@@ -99,7 +99,7 @@
  
 --- a/include/net/addrconf.h
 +++ b/include/net/addrconf.h
-@@ -506,4 +506,9 @@ int if6_proc_init(void);
+@@ -514,4 +514,9 @@ int if6_proc_init(void);
  void if6_proc_exit(void);
  #endif
  
@@ -169,7 +169,7 @@
  #endif
 --- a/net/8021q/vlan_core.c
 +++ b/net/8021q/vlan_core.c
-@@ -548,4 +548,52 @@ static int __init vlan_offload_init(void
+@@ -555,4 +555,52 @@ static int __init vlan_offload_init(void
  	return 0;
  }
  
