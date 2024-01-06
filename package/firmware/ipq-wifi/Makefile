@@ -30,6 +30,7 @@ endef
 ALLWIFIBOARDS:= \
 	arcadyan_aw1000 \
 	buffalo_wxr-5950ax12 \
+  cmiot_ax18 \
 	compex_wpq873 \
 	dynalink_dl-wrx36 \
 	edgecore_eap102 \
