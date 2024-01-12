@@ -7,7 +7,6 @@
 #include "ipq6018-cpr-regulator.dtsi"
 #include "ipq6018-nss.dtsi"
 #include "ipq6018-256m.dtsi"
-// #include "ipq6018-memory.dtsi"
 
 #include <dt-bindings/input/input.h>
 #include <dt-bindings/gpio/gpio.h>
