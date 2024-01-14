@@ -13,7 +13,7 @@ Signed-off-by: Chukun Pan <amadeus@jmu.edu.cn>
 
 --- a/arch/arm64/boot/dts/qcom/ipq6018.dtsi
 +++ b/arch/arm64/boot/dts/qcom/ipq6018.dtsi
-@@ -644,6 +644,20 @@
+@@ -639,6 +639,20 @@
  			status = "disabled";
  		};
  

@@ -12,6 +12,7 @@ ipq807x_setup_interfaces()
 
 	case "$board" in
 	cmiot,ax18|\
+	qihoo,v6|\
 	zn,m2)
 		ucidef_set_interfaces_lan_wan "eth1 eth2 eth3" "eth0"
         ;;

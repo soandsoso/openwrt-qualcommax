@@ -13,6 +13,7 @@ case "$board" in
     cmiot_ax18|\
     redmi,ax5|\
     xiaomi,ax1800|\
+    qihoo,v6|\
     zn,m2)
         idx="$(find_mtd_index 0:appsblenv)"
         [ -n "$idx" ] && \
