@@ -1,23 +1,10 @@
-/*
- * Copyright (c) 2019, The Linux Foundation. All rights reserved.
- *
- * Permission to use, copy, modify, and/or distribute this software for any
- * purpose with or without fee is hereby granted, provided that the above
- * copyright notice and this permission notice appear in all copies.
- *
- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
- * ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
- * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
- * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- */
+// SPDX-License-Identifier: (GPL-2.0+)
 
 /dts-v1/;
 
 #include "ipq6018-512m.dtsi"
 #include "ipq6018-ess.dtsi"
+#include "ipq6018-cpr-regulator.dtsi"
 #include "ipq6018-nss.dtsi"
 
 
@@ -26,12 +13,12 @@
 #include <dt-bindings/leds/common.h>
 
 / {
-	#address-cells = <0x2>;
-	#size-cells = <0x2>;
+	// #address-cells = <0x2>;
+	// #size-cells = <0x2>;
     model = "Qihoo 360 V6";
 	compatible = "qihoo,v6", "qcom,ipq6018";
-	interrupt-parent = <&intc>;
-	qcom,msm-id = <0x192 0x0>;
+	// interrupt-parent = <&intc>;
+	// qcom,msm-id = <0x192 0x0>;
 
 	aliases {
 		serial0 = &blsp1_uart3;
@@ -46,7 +33,7 @@
 		ethernet3 = &dp4;
 	};
 
-    /delete-node/ rpm-glink;
+    // /delete-node/ rpm-glink;
 
 	chosen {
 		stdout-path = "serial0:115200n8";
@@ -94,6 +81,12 @@
 			gpios = <&tlmm 73 GPIO_ACTIVE_HIGH>;
 		};
 	};
+};
+
+&blsp1_uart3 {
+	pinctrl-0 = <&uart_pins>;
+	pinctrl-names = "default";
+	status = "okay";
 };
 
 &tlmm {
@@ -163,60 +156,28 @@
 	};
 };
 
-
-&blsp1_uart3 {
-	pinctrl-0 = <&uart_pins>;
-	pinctrl-names = "default";
+&dp1 {
+	phy-handle = <&phy_0>;
 	status = "okay";
+	qcom,id = <1>;
 };
 
-&blsp1_spi1 {
-	pinctrl-0 = <&spi_1_pins>;
-	pinctrl-names = "default";
-	cs-select = <0>;
+&dp2 {
+	phy-handle = <&phy_1>;
 	status = "okay";
-
-	m25p80@0 {
-		#address-cells = <1>;
-		#size-cells = <1>;
-		reg = <0>;
-		compatible = "n25q128a11";
-		linux,modalias = "m25p80", "n25q128a11";
-		spi-max-frequency = <50000000>;
-		use-default-sizes;
-	};
+	qcom,id = <2>;
 };
 
-&prng {
+&dp3 {
+	phy-handle = <&phy_2>;
 	status = "okay";
+	qcom,id = <3>;
 };
 
-&cryptobam {
-	status = "okay";
-};
-
-&crypto {
-	status = "okay";
-};
-
-&qpic_bam {
-	status = "okay";
-};
-
-&qusb_phy_0 {
-	status = "okay";
-};
-
-&ssphy_0 {
-	status = "okay";
-};
-
-&usb2 {
-	status = "okay";
-};
-
-&usb3 {
-	status = "okay";
+&dp4 {
+	phy-handle = <&phy_3>;
+	status = "okay"; 
+	qcom,id = <4>;
 };
 
 &edma {
@@ -289,6 +250,23 @@
 	status = "okay";
 };
 
+&blsp1_spi1 {
+	pinctrl-0 = <&spi_1_pins>;
+	pinctrl-names = "default";
+	cs-select = <0>;
+	status = "okay";
+
+	m25p80@0 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		reg = <0>;
+		compatible = "n25q128a11";
+		linux,modalias = "m25p80", "n25q128a11";
+		spi-max-frequency = <50000000>;
+		use-default-sizes;
+	};
+};
+
 &qpic_nand {
 	status = "okay";
 
@@ -306,42 +284,50 @@
 	qcom,ath11k-fw-memory-mode = <1>;
 };
 
-&dp1 {
-	phy-handle = <&phy_0>;
+&ssphy_0 {
 	status = "okay";
-	qcom,id = <1>;
 };
 
-&dp2 {
-	phy-handle = <&phy_1>;
+&qusb_phy_0 {
 	status = "okay";
-	qcom,id = <2>;
 };
 
-&dp3 {
-	phy-handle = <&phy_2>;
+&usb2 {
 	status = "okay";
-	qcom,id = <3>;
 };
 
-&dp4 {
-	phy-handle = <&phy_3>;
-	status = "okay"; 
-	qcom,id = <4>;
+&usb3 {
+	status = "okay";
 };
 
-&CPU0 {
-	/delete-property/ cpu-supply;
+&prng {
+	status = "okay";
 };
 
-&CPU1 {
-	/delete-property/ cpu-supply;
+&cryptobam {
+	status = "okay";
 };
 
-&CPU2 {
-	/delete-property/ cpu-supply;
+&crypto {
+	status = "okay";
 };
 
-&CPU3 {
-	/delete-property/ cpu-supply;
+&qpic_bam {
+	status = "okay";
 };
+
+// &CPU0 {
+// 	/delete-property/ cpu-supply;
+// };
+
+// &CPU1 {
+// 	/delete-property/ cpu-supply;
+// };
+
+// &CPU2 {
+// 	/delete-property/ cpu-supply;
+// };
+
+// &CPU3 {
+// 	/delete-property/ cpu-supply;
+// };
