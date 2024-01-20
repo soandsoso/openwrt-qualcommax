@@ -1,0 +1,292 @@
+Package: cgi-io
+Version: 2022-08-10-901b0f04-21
+Depends: libc, libubox202312041, libubus20231128
+License: GPL-2.0-or-later
+Section: net
+Architecture: aarch64_cortex-a53
+Installed-Size: 9660
+Filename: cgi-io_2022-08-10-901b0f04-21_aarch64_cortex-a53.ipk
+Size: 10311
+SHA256sum: 2f20c74cc7e45f42059f8f8929bcbe112333b32363ee1f4362cd2b6de017adf1
+Description:  This package contains an cgi utility that is useful for up/downloading files
+
+Package: chinadns-ng
+Version: 2023.10.28-1
+Depends: libc
+License: AGPL-3.0-only
+Section: net
+Architecture: aarch64_cortex-a53
+Installed-Size: 28047
+Filename: chinadns-ng_2023.10.28-1_aarch64_cortex-a53.ipk
+Size: 28843
+SHA256sum: c6ca0c19221bb7ce92955fdfdef1385e99ec143c5e870f930c82e9b338e702be
+Description:  ChinaDNS next generation, refactoring with epoll and ipset.
+
+Package: coreutils-base64
+Version: 9.3-1
+Depends: libc, coreutils
+Alternatives: 300:/bin/base64:/usr/libexec/base64-coreutils
+License: GPL-3.0-or-later
+Section: utils
+CPE-ID: cpe:/a:gnu:coreutils
+Architecture: aarch64_cortex-a53
+Installed-Size: 24723
+Filename: coreutils-base64_9.3-1_aarch64_cortex-a53.ipk
+Size: 25398
+SHA256sum: 7802f9adafae742eb6450363541767f76f35ada5eb573d97df774e87e3129dd4
+Description:  Full version of standard GNU base64 utility.
+
+Package: coreutils-nohup
+Version: 9.3-1
+Depends: libc, coreutils
+Alternatives: 300:/usr/bin/nohup:/usr/libexec/nohup-coreutils
+License: GPL-3.0-or-later
+Section: utils
+CPE-ID: cpe:/a:gnu:coreutils
+Architecture: aarch64_cortex-a53
+Installed-Size: 23448
+Filename: coreutils-nohup_9.3-1_aarch64_cortex-a53.ipk
+Size: 24110
+SHA256sum: a6cda983ab5d99c0febacc23e3f5f93e557b03384bb30daa558b3debff7bc11d
+Description:  Full version of standard GNU nohup utility.
+
+Package: coreutils
+Version: 9.3-1
+Depends: libc
+License: GPL-3.0-or-later
+Section: utils
+CPE-ID: cpe:/a:gnu:coreutils
+Architecture: aarch64_cortex-a53
+Installed-Size: 96
+Filename: coreutils_9.3-1_aarch64_cortex-a53.ipk
+Size: 976
+SHA256sum: f3e6b7514ba506bf63734ee36283aa953a0be332e983f13dccf3919bce8dd057
+Description:  Full versions of standard GNU utilities. If an equivalent Busybox applet is
+ available, you should consider compiling that instead as Busybox applets are
+ usually smaller, at the expense of reduced functionality.
+
+Package: curl
+Version: 8.5.0-1
+Depends: libc, libcurl4
+License: MIT
+Section: net
+CPE-ID: cpe:/a:haxx:libcurl
+Architecture: aarch64_cortex-a53
+Installed-Size: 66126
+Filename: curl_8.5.0-1_aarch64_cortex-a53.ipk
+Size: 66692
+SHA256sum: e1f0c16e8810fe94712e268b3e0e1e9a807f181cc8e49e76475ccbed8ff44db6
+Description:  A client-side URL transfer utility
+
+Package: ddns-scripts-services
+Version: 2.8.2-42
+Depends: libc
+Provides: ddns-scripts_service
+License: GPL-2.0
+Section: net
+Architecture: all
+Installed-Size: 3896
+Filename: ddns-scripts-services_2.8.2-42_all.ipk
+Size: 4508
+SHA256sum: ea95aa4a8a7b29e1bd836d6523241d554637c12f0a7f2925c05a431629eee9d0
+Description:  Dynamic DNS Client definitions for supported services
+
+Package: ddns-scripts
+Version: 2.8.2-42
+Depends: libc, ddns-scripts-services
+License: GPL-2.0
+Section: net
+Architecture: all
+Installed-Size: 23909
+Filename: ddns-scripts_2.8.2-42_all.ipk
+Size: 24920
+SHA256sum: 4635e6fde4e9c9a2c8cc31226cf840cf462eeba120ab90f4c3b88374f22eaa37
+Description:  Dynamic DNS Client scripts (with IPv6 support)
+ A highly configurable set of scripts for doing dynamic dns updates.
+ - IPv6 support
+ - DNS server support
+ - Glue Record support (require BIND host or KNOT host)
+ - DNS requests via TCP
+ - Proxy server support
+ - log file support
+ - support to run once
+ Version: 2.8.2-42
+ Info   : https://openwrt.org/docs/guide-user/services/ddns/client
+
+Package: dns2socks
+Version: 2.1-2
+Depends: libc, libpthread
+License: BSD-3-Clause
+Section: net
+Architecture: aarch64_cortex-a53
+Installed-Size: 11191
+Filename: dns2socks_2.1-2_aarch64_cortex-a53.ipk
+Size: 11836
+SHA256sum: 5963c5f5b402a351294d3c4e20e82b43657377f3750efefb394cb7d4c0045e53
+Description:  This is a command line utility to resolve DNS requests via
+ a SOCKS tunnel like Tor or a HTTP proxy.
+
+Package: dns2tcp
+Version: 1.1.0-3
+Depends: libc
+License: AGPL-3.0-only
+Section: net
+Architecture: aarch64_cortex-a53
+Installed-Size: 11914
+Filename: dns2tcp_1.1.0-3_aarch64_cortex-a53.ipk
+Size: 12662
+SHA256sum: a69418d983854da1945ec56932742c8ebe694d99f87de52d9357e3c9c723fc1f
+Description:  utility to convert dns query from udp to tcp
+
+Package: etherwake
+Version: 1.09-5
+Depends: libc
+Section: net
+Architecture: aarch64_cortex-a53
+Installed-Size: 5613
+Filename: etherwake_1.09-5_aarch64_cortex-a53.ipk
+Size: 6364
+SHA256sum: 01dc66d95a7595176b1494db523e48a2a5ad516468cc1f78bd2abb3bc1dbc3a1
+Description:  You can wake up WOL compliant Computers which have been powered down to
+ sleep mode or start WOL compliant Computers with a BIOS feature.
+ WOL is an abbreviation for Wake-on-LAN. It is a standard that allows you
+ to turn on a computer from another location over a network connection.
+ ether-wake also supports WOL passwords.
+
+Package: htop
+Version: 3.3.0-1
+Depends: libc, libncurses6
+License: GPL-2.0-or-later
+Section: admin
+CPE-ID: cpe:/a:htop:htop
+Architecture: aarch64_cortex-a53
+Installed-Size: 114719
+Filename: htop_3.3.0-1_aarch64_cortex-a53.ipk
+Size: 115472
+SHA256sum: 5461607a4581c5845f22506ab0c96022a8e0b5c63003b24d7c24c7012c83fa96
+Description:  Htop is an ncursed-based process viewer similar to top, but
+ it allows to scroll the list vertically and horizontally to
+ see all processes and their full command lines.
+
+Package: ipt2socks
+Version: 1.1.3-3
+Depends: libc
+License: AGPL-3.0
+Section: net
+Architecture: aarch64_cortex-a53
+Installed-Size: 25981
+Filename: ipt2socks_1.1.3-3_aarch64_cortex-a53.ipk
+Size: 26561
+SHA256sum: 9aa829b7c146274a1b306cc50fd9470b1713ba875ac31cf7213e39f44b6a1518
+Description:  Utility for converting iptables (redirect/tproxy) to socks5.
+
+Package: libcap-ng
+Version: 0.8.3-2
+Depends: libc
+License: GPL-2.0-or-later LGPL-2.1-or-later
+Section: libs
+Architecture: aarch64_cortex-a53
+Installed-Size: 8729
+Filename: libcap-ng_0.8.3-2_aarch64_cortex-a53.ipk
+Size: 9401
+SHA256sum: 5d93860663b2d3718131f1df9842d7405ec3c42545301a7a4bee3f26b2fbc95d
+Description:  POSIX capabilities library library
+
+Package: libcurl4
+Version: 8.5.0-1
+Depends: libc, libopenssl3, libpthread, libnghttp2-14, ca-bundle
+Provides: libcurl
+License: MIT
+Section: libs
+ABIVersion: 4
+CPE-ID: cpe:/a:haxx:libcurl
+Architecture: aarch64_cortex-a53
+Installed-Size: 222100
+Filename: libcurl4_8.5.0-1_aarch64_cortex-a53.ipk
+Size: 222595
+SHA256sum: f981db475c180e8966dd5a216141b5b5fa6026b5c82f1dae9dd9c564ad615dbb
+Description:  A client-side URL transfer library
+
+Package: libnghttp2-14
+Version: 1.57.0-1
+Depends: libc
+Provides: libnghttp2
+License: MIT
+Section: libs
+ABIVersion: -14
+Architecture: aarch64_cortex-a53
+Installed-Size: 73341
+Filename: libnghttp2-14_1.57.0-1_aarch64_cortex-a53.ipk
+Size: 72069
+SHA256sum: 66ea8a494588f85824aed25d10e79aef8529ffa5fcb0c7395f67a53195c331d8
+Description:  C library implementing the framing layer of the HTTP/2 protocol. It can be used to build a HTTP/2-capable HTTP client or server
+
+Package: microsocks
+Version: 1.0.3-3
+Depends: libc
+License: MIT
+Section: net
+Architecture: aarch64_cortex-a53
+Installed-Size: 6212
+Filename: microsocks_1.0.3-3_aarch64_cortex-a53.ipk
+Size: 6991
+SHA256sum: 13bc815aeebb11f28695a71bed397799e8cffb2b0844f77f06d73543568d5779
+Description:  Low resource SOCKS5 proxy.
+ Supports only SOCKS5 protocol and forwarding only TCP/IP connections.
+
+Package: miniupnpd-nftables
+Version: 2.3.3-2
+Depends: libc, libcap-ng, libmnl0, libuuid1, libnftnl11
+Conflicts: miniupnpd-iptables
+Provides: miniupnpd
+License: BSD-3-Clause
+Section: net
+CPE-ID: cpe:/a:miniupnp_project:miniupnpd
+Architecture: aarch64_cortex-a53
+Installed-Size: 87109
+Filename: miniupnpd-nftables_2.3.3-2_aarch64_cortex-a53.ipk
+Size: 87969
+SHA256sum: 70f9a4da5e6c6abbe8d0f303e710e751ce0179aa0fd9967805b609f878278f0a
+Description:  Lightweight UPnP IGD, NAT-PMP & PCP daemon (nftables)
+
+Package: tcping
+Version: 0.3-2
+Depends: libc
+License: GPL-2.0-only
+Section: net
+Architecture: aarch64_cortex-a53
+Installed-Size: 3959
+Filename: tcping_0.3-2_aarch64_cortex-a53.ipk
+Size: 4530
+SHA256sum: 7d022dc01b372236c87cfb31c38a9c7ee58645f40e88d63e41c708eb229d0bdf
+Description:  tcping measures the latency of a tcp-connection
+
+Package: unzip
+Version: 6.0-8
+Depends: libc
+License: BSD-4-Clause
+Section: utils
+CPE-ID: cpe:/a:info-zip:unzip
+Architecture: aarch64_cortex-a53
+Installed-Size: 116525
+Filename: unzip_6.0-8_aarch64_cortex-a53.ipk
+Size: 116884
+SHA256sum: 199ea4ec533110fcae25ff1427634422cb718b805d2e13a2d40bbd8cb644850d
+Description:  InfoZIP's unzip program. With the exception of multi-volume archives
+ (ie, .ZIP files that are split across several disks using PKZIP's /& option),
+ this can handle any file produced either by PKZIP, or the corresponding
+ InfoZIP zip program.
+
+Package: xray-core
+Version: 1.8.7-1
+Depends: libc, ca-bundle
+License: MPL-2.0
+Section: net
+Architecture: aarch64_cortex-a53
+Installed-Size: 9386533
+Filename: xray-core_1.8.7-1_aarch64_cortex-a53.ipk
+Size: 9355467
+SHA256sum: 0beb5988fcc4deff890316947816abc80c457d1a0f4f52fa22c9d05a38c0c6c4
+Description:  Xray, Penetrates Everything. It helps you to build your own computer network.
+ It secures your network connections and thus protects your privacy.
+

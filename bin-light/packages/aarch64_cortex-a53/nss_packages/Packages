@@ -1,0 +1,11 @@
+Package: qca-ssdk-shell
+Version: 2023-10-04-451c3a26-1
+Depends: libc
+Section: QCA
+Architecture: aarch64_cortex-a53
+Installed-Size: 235667
+Filename: qca-ssdk-shell_2023-10-04-451c3a26-1_aarch64_cortex-a53.ipk
+Size: 230537
+SHA256sum: 745fcaa9394cbba4e46e1a1ec3a6edc2ee6450572444affdb8481194d8c0b054
+Description:  Shell application for QCA SSDK
+
