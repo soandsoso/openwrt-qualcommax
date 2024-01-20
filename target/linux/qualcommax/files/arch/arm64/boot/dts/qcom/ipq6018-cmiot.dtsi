@@ -2,8 +2,9 @@
 
 /dts-v1/;
 
-#include "ipq6018-256m.dtsi"
+#include "ipq6018.dtsi"
 #include "ipq6018-ess.dtsi"
+#include "ipq6018-256m.dtsi"
 #include "ipq6018-nss.dtsi"
 
 
@@ -88,25 +89,37 @@
 &dp1 {
 	phy-handle = <&phy_0>;
 	status = "okay";
+<<<<<<< HEAD
 	qcom,id = <5>;
+=======
+>>>>>>> upstream/ipq60xx-devel_nss
 };
 
 &dp2 {
 	phy-handle = <&phy_1>;
 	status = "okay";
+<<<<<<< HEAD
 	qcom,id = <1>;
+=======
+>>>>>>> upstream/ipq60xx-devel_nss
 };
 
 &dp3 {
 	phy-handle = <&phy_2>;
 	status = "okay";
+<<<<<<< HEAD
 	qcom,id = <2>;
+=======
+>>>>>>> upstream/ipq60xx-devel_nss
 };
 
 &dp4 {
 	phy-handle = <&phy_3>;
 	status = "okay";
+<<<<<<< HEAD
 	qcom,id = <4>;
+=======
+>>>>>>> upstream/ipq60xx-devel_nss
 };
 
 &edma {
@@ -139,12 +152,15 @@
 &switch {
 	status = "okay";
 
+<<<<<<< HEAD
 	switch_lan_bmp = <(ESS_PORT1 | ESS_PORT2 | ESS_PORT4)>; /* lan port bitmap */
 	switch_wan_bmp = <ESS_PORT5>; /* wan port bitmap */
 	switch_mac_mode = <MAC_MODE_DISABLED>; /* MAC mode for UNIPHY instance 0 */
 	switch_mac_mode1 = <MAC_MODE_DISABLED>; /* MAC mode for UNIPHY instance 1 */
 	switch_mac_mode2 = <MAC_MODE_DISABLED>; /* MAC mode for UNIPHY instance 2 */
 
+=======
+>>>>>>> upstream/ipq60xx-devel_nss
 	qcom,port_phyinfo {
 		port@0 {
 			port_id = <0x01>;
@@ -242,4 +258,8 @@
 
 &CPU3 {
 	/delete-property/ cpu-supply;
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> upstream/ipq60xx-devel_nss
