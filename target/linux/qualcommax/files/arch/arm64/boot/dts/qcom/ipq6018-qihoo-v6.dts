@@ -74,8 +74,6 @@
 };
 
 &tlmm {
-	// compatible = "qcom,ipq6000-pinctrl";
-
 	uart_pins: uart_pins {
 		mux {
 			pins = "gpio44", "gpio45";

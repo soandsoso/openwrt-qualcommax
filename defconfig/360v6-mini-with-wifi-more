@@ -1,0 +1,72 @@
+CONFIG_TARGET_qualcommax=y
+CONFIG_TARGET_qualcommax_ipq60xx=y
+CONFIG_TARGET_qualcommax_ipq60xx_DEVICE_qihoo_v6=y
+CONFIG_DEVEL=y
+CONFIG_LUCI_CSSTIDY=y
+CONFIG_LUCI_LANG_zh_Hans=y
+CONFIG_NSS_DRV_CLMAP_ENABLE=y
+CONFIG_NSS_DRV_GRE_ENABLE=y
+CONFIG_NSS_DRV_IGS_ENABLE=y
+CONFIG_NSS_DRV_LAG_ENABLE=y
+CONFIG_NSS_DRV_MATCH_ENABLE=y
+CONFIG_NSS_DRV_MIRROR_ENABLE=y
+CONFIG_NSS_DRV_SHAPER_ENABLE=y
+CONFIG_NSS_DRV_WIFI_EXT_VDEV_ENABLE=y
+CONFIG_NSS_DRV_WIFI_MESH_ENABLE=y
+CONFIG_PACKAGE_6in4=y
+CONFIG_PACKAGE_default-settings=y
+CONFIG_PACKAGE_default-settings-chn=y
+CONFIG_PACKAGE_htop=y
+CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_kmod-crypto-lib-chacha20=y
+CONFIG_PACKAGE_kmod-crypto-lib-chacha20poly1305=y
+CONFIG_PACKAGE_kmod-crypto-lib-curve25519=y
+CONFIG_PACKAGE_kmod-crypto-lib-poly1305=y
+CONFIG_PACKAGE_kmod-gre6=y
+CONFIG_PACKAGE_kmod-ifb=y
+CONFIG_PACKAGE_kmod-ip6-tunnel=y
+CONFIG_PACKAGE_kmod-iptunnel4=y
+CONFIG_PACKAGE_kmod-iptunnel6=y
+CONFIG_PACKAGE_kmod-qca-nss-cfi-cryptoapi=y
+CONFIG_PACKAGE_kmod-qca-nss-crypto=y
+CONFIG_PACKAGE_kmod-qca-nss-drv-clmapmgr=y
+CONFIG_PACKAGE_kmod-qca-nss-drv-eogremgr=y
+CONFIG_PACKAGE_kmod-qca-nss-drv-gre=y
+CONFIG_PACKAGE_kmod-qca-nss-drv-igs=y
+CONFIG_PACKAGE_kmod-qca-nss-drv-lag-mgr=y
+CONFIG_PACKAGE_kmod-qca-nss-drv-match=y
+CONFIG_PACKAGE_kmod-qca-nss-drv-qdisc=y
+CONFIG_PACKAGE_kmod-sched-core=y
+CONFIG_PACKAGE_kmod-sit=y
+CONFIG_PACKAGE_kmod-udptunnel4=y
+CONFIG_PACKAGE_kmod-udptunnel6=y
+CONFIG_PACKAGE_kmod-wireguard=y
+CONFIG_PACKAGE_libncurses=y
+# CONFIG_PACKAGE_luci-app-diskman_INCLUDE_btrfs_progs is not set
+# CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_IPT2Socks is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray is not set
+# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng is not set
+# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui is not set
+CONFIG_PACKAGE_luci-compat=y
+CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-firewall-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-opkg-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-upnp-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
+CONFIG_PACKAGE_luci-proto-wireguard=y
+CONFIG_PACKAGE_nss-eip-firmware=y
+CONFIG_PACKAGE_nss-firmware-ipq6018=y
+CONFIG_PACKAGE_terminfo=y
+CONFIG_PACKAGE_wireguard-tools=y
+# CONFIG_PACKAGE_kmod-crypto-kpp is not set
