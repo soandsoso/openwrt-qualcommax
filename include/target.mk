@@ -53,13 +53,16 @@ DEFAULT_PACKAGES.nas:=\
 	mdadm
 # For router targets
 DEFAULT_PACKAGES.router:=\
-	dnsmasq \
+	dnsmasq-full \
 	firewall4 \
 	nftables \
 	kmod-nft-offload \
 	odhcp6c \
 	odhcpd-ipv6only \
 	ppp \
+  kmod-nf-nathelper kmod-nf-nathelper-extra \
+  ddns-scripts-dnspod luci-app-ddns luci-app-upnp \
+  luci-app-wol curl ca-certificates luci \
 	ppp-mod-pppoe
 
 ifneq ($(DUMP),)
